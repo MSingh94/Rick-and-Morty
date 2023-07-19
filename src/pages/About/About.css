@@ -1,0 +1,19 @@
+.about-container{
+    min-height: 100vh;
+}
+.about-dark{
+    background-color: black;
+    color:white;
+ }
+
+.about-container h1{
+    padding: 20px;
+}
+
+.about-container p{
+    padding: 20px;
+}
+
+img {
+    width: 100%;
+}
