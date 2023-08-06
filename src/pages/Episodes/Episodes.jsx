@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import './Episodes.css';
 import axios from 'axios';
 import CharacterCard from '../../components/CharacterCard/CharacterCard';
+import { ThemeContext } from '../../context/ThemeContext';
 
 function Episodes() {
+
+  const {darkMode, setDarkMode} = useContext(ThemeContext)
   const [options, setOptions] = React.useState([]);
   const [selectedOption, setSelectedOption] = React.useState(1);
   const [selectedEpisode, setSelectedEpisode] = React.useState('');
@@ -60,7 +63,7 @@ function Episodes() {
   };
 
   return (
-    <div className='episodes-container'>
+    <div className={darkMode? "episodes-container episodes-dark" :'episodes-container'}>
       <div>
         <label htmlFor='select-episode'>Select an Episode</label>
         <select id='select-episode' onChange={handleSelectChange} value={selectedOption}>
